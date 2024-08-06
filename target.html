@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="expect" href="#lead-content" blocking="render" />
+    <title>Target Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        @view-transition {
+          navigation: auto;
+        }    
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <h1>Welcome to the Target Page</h1>
+        <p>This is the target page. You have successfully transitioned from the source page.</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+              const toInsert = document.createElement("div");
+              toInsert.id = "lead-content";
+              document.body.appendChild(toInsert);
+            }, 4000);
+        });
+    </script>
+</body>
+</html>

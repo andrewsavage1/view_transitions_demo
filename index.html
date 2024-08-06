@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="expect" href="#lead-content" blocking="render" />
+    <title>Source Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        @view-transition {
+            navigation: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <h1>Welcome to the Source Page</h1>
+        <p class="message">This is the source page. Click the button below to transition to the target page.</p>
+        <button onclick="transition()"><a href="target.html">Go to Target Page</a></button>
+    </div>
+
+    <script>
+        function transition() {
+            const container = document.getElementById('container');
+            const message = document.getElementsByClassName('message')[0];
+            message.textContent = "Waiting for the next page to be ready!";
+        }
+    </script>
+</body>
+</html>
